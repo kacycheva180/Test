@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+<meta charset="utf-8">
+ 
+<title>Toshiba WebAR Demo</title>
+ 
+https://aframe.io/releases/1.4.2/aframe.min.jsscript>
+ 
+https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.jsscript>
+ 
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1,
+maximum-scale=1,
+user-scalable=no">
+ 
+<style>
+body {
+margin: 0;
+overflow: hidden;
+}
+ 
+.instructions {
+position: absolute;
+top: 15px;
+left: 0;
+width: 100%;
+text-align: center;
+color: white;
+font-family: Arial;
+z-index: 999;
+font-size: 18px;
+text-shadow: 2px 2px 4px black;
+}
+</style>
+</head>
+ 
+<body>
+ 
+<div class="instructions">
+Point camera at marker
+</div>
+ 
+<a-scene
+embedded
+vr-mode-ui="enabled: false"
+renderer="logarithmicDepthBuffer: true;"
+arjs="trackingMethod: best; sourceType: webcam;">
+ 
+<a-assets>
+./assets/printer.glb
+</a-asset-item>
+</a-assets>
+ 
+<a-marker preset="hiro">
+ 
+<a-entity
+gltf-model="#printerModel"
+position="0 0 0"
+scale="0.5 0.5 0.5"
+rotation="0 0 0">
+</a-entity>
+ 
+</a-marker>
+ 
+<a-entity camera></a-entity>
+ 
+</a-scene>
+ 
+</body>
+</html>
